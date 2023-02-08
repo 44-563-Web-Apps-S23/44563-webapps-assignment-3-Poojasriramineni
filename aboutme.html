@@ -16,7 +16,7 @@
         <h4>
             Tourist table
         </h4>
-        <p>\I am creating table for tourism</p>
+        <p>I am creating table for tourism</p>
         <table>
             <tr>
                 <th>Country</th>
@@ -44,5 +44,32 @@
                 <td>15 days</td>
             </tr>
         </table>
+        <hr>
+        <h4>code display</h4>
+        <b>date() select previous day why?</b>
+        <pre>
+            Sub UploadJPGWithCURL()
+    Dim winHttpReq As Object
+    Dim fileData As String
+    Dim boundary As String
+
+    Dim fileName As String
+    Dim filePath As String
+    
+    filePath = "Z:\Desktop\testimage.jpg"
+    fileName = "testimage.jpg"
+
+    boundary = "----------------------------" & Format(Now, "ddmmyyyyhhmmss")
+    
+    fileData = "--" & boundary & vbCrLf
+    fileData = fileData & "Content-Disposition: form-data; name=""fileToUpload""; filename=""" & fileName & """" & vbCrLf
+    fileData = fileData & "Content-Type: image/jpeg" & vbCrLf & vbCrLf
+    'fileData = fileData & filePath & vbCrLf
+    fileData = fileData & getBinaryFile(filePath) & vbCrLf
+    fileData = fileData & "--" & boundary & "--" & vbCrLf
+    
+    Debug.Print fileData
+        </pre>
+        <a href="https://stackoverflow.com/questions/75391992/how-do-i-upload-jpg-to-my-own-webserver-using-vba-in-access">link to the php</a>
     </body>
 </html>
